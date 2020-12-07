@@ -1,0 +1,19 @@
+{
+  "name": "native-test-wrap",
+  "version": "1.0.0",
+  "description": "node wrapper for the native test lib",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weagle08/native-test-wrap.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weagle08/native-test-wrap/issues"
+  },
+  "homepage": "https://github.com/weagle08/native-test-wrap#readme"
+}
