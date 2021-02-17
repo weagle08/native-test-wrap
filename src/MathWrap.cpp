@@ -14,6 +14,11 @@ MathWrap::MathWrap(const Napi::CallbackInfo &info) : ObjectWrap(info)
     this->_id = std::rand() % 100;
 }
 
+MathWrap::~MathWrap()
+{
+    delete this->_wrappedObj;
+}
+
 Napi::Value MathWrap::Add(const Napi::CallbackInfo &info)
 {
     Napi::Env env = info.Env();
