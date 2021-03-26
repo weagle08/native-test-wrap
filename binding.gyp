@@ -7,7 +7,8 @@
                 "deps/native-test/src"
             ],
             "sources": [
-                "src/MathWrap.cpp"
+                "src/MathWrap.cpp",
+                "src/addon.cpp"
             ],
             "dependencies": [
                 "builds/libnativetest.gyp:libnative"

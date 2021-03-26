@@ -48,20 +48,25 @@ Napi::Value MathWrap::GetId(const Napi::CallbackInfo &info)
     return Napi::Number::New(info.Env(), this->_id);
 }
 
-Napi::Function MathWrap::GetClass(Napi::Env env)
+Napi::Function MathWrap::New(Napi::Env env)
 {
-    return DefineClass(
+    Napi::Function func = DefineClass(
         env,
         "MathWrap",
         {MathWrap::InstanceMethod("add", &MathWrap::Add),
          MathWrap::InstanceMethod("subtract", &MathWrap::Subtract),
          MathWrap::InstanceMethod("getId", &MathWrap::GetId)});
+    Napi::FunctionReference *ctor = new Napi::FunctionReference();
+    *ctor = Napi::Persistent(func);
+    ctor->SuppressDestruct();
+
+    return func;
 }
 
-Napi::Object Init(Napi::Env env, Napi::Object exports)
-{
-    exports.Set(Napi::String::New(env, "MathWrap"), MathWrap::GetClass(env));
-    return exports;
-}
-
-NODE_API_MODULE(MathWrap, Init);
+//Napi::Object Init(Napi::Env env, Napi::Object exports)
+//{
+//	exports.Set("MathWrap", MathWrap::New(env));
+//	return exports;
+//}
+//
+//NODE_API_MODULE(MathWrap, Init);

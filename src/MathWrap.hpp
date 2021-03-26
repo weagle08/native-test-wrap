@@ -11,7 +11,7 @@ public:
     Napi::Value Subtract(const Napi::CallbackInfo &info);
     Napi::Value GetId(const Napi::CallbackInfo &info);
 
-    static Napi::Function GetClass(Napi::Env env);
+    static Napi::Function New(Napi::Env env);
 
 private:
     MathObj *_wrappedObj;

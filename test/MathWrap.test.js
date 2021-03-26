@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const wrapper = require('../lib/binding');
+const wrapper = require('../lib/binding').MathWrap;
 let wrap = null;
 let expectedId = null;
 
